@@ -17,6 +17,7 @@
 <div class="row">    
     <h2>Renseigner ma fiche de frais du mois 
         <?php echo $numMois . '-' . $numAnnee ?>
+         <?php echo $_SESSION['prenom'] . ' ' . $_SESSION['nom']?>
     </h2>
     <h3>Eléments forfaitisés</h3>
     <div class="col-md-4">

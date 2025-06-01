@@ -123,7 +123,8 @@
                 $montant = $unFraisHorsForfait['montant'];
                 $id = $unFraisHorsForfait['id']; ?>           
                 <tr>
-                    <td><input type='text' name='Date' value='<?php echo $date ?>'></td>
+                    <td><input type='hidden' name='idFrais' value='<?php echo $id ?>'><!-- comment -->
+                        <input type='text' name='Date' value='<?php echo $date ?>'></td>
                     <td><input type='text' name='Libelle' value='<?php echo $libelle ?>'></td>
                     <td><input type='text' name='Montant' value='<?php echo $montant ?>'></td>
                     <td> <input class="btn btn-success" type="submit"  value="Corriger" name="corriger" id="corriger">
@@ -138,8 +139,11 @@
     </div>
 </div>
     </form>
-        
-      <td> <button class="btn btn-success" type="submit">Valider</button></td>
-                    <td><button class="btn btn-danger" type="reset">Réinitialiser</button></td>  
+     <form action="index.php?uc=validfrais&action=mettreVA" 
+              method="post" role="form">   
+            <input name="lstVisiteur" type="hidden" value="<?php echo $visiteurASelectionner?>">
+            <input name="lstMois" type="hidden" value="<?php echo $moisASelectionner?>"> 
+         <button class="btn btn-success" type="submit">Valider</button>
+     </form>  
     
     

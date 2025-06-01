@@ -51,4 +51,9 @@ switch ($action) {
     default:
         include 'vues/v_connexion.php';
         break;
+        
+        echo verifpassword('mdpvisiteur');
+        //quand il est connecte 
+        //
+        //
 }    

@@ -1,37 +1,26 @@
 <?php
-/**
- * Vue Liste des mois
- *
- * PHP Version 7
- *
- * @category  PPE
- * @package   GSB
- * @author    Réseau CERTA <contact@reseaucerta.org>
- * @author    José GIL <jgil@ac-nice.fr>
- * @copyright 2017 Réseau CERTA
- * @license   Réseau CERTA
- * @version   GIT: <0>
- * @link      http://www.reseaucerta.org Contexte « Laboratoire GSB »
+
+/* 
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
 ?>
-<h2>Mes validations de frais</h2>
+
+<h2 style="color:orange">Suivre le paiement des fiches de frais</h2>
 <div class="row">
     <div class="col-md-4">
-        <h3>Sélectionner un mois : </h3>
-        <h3>Sélectionner un Visiteur : </h3>
-    </div>
-    <div class="col-md-4">
-              <form action="index.php?uc=validfrais&action=choisir2" 
+        <form action="index.php?uc=suivrePaiement&action=afficheFrais" 
               method="post" role="form">
-            <div class="form-group">
-                <label for="lstMois" accesskey="n">Mois : </label>
+            
+            &nbsp;<div class="form-group" style="display: inline-block">
+                <label for="lstMois" accesskey="n">Fiche du mois : </label>
                 <select id="lstMois" name="lstMois" class="form-control">
                     <?php
                     foreach ($lesMois as $unMois) {
                         $mois = $unMois['mois'];
                         $numAnnee = $unMois['numAnnee'];
                         $numMois = $unMois['numMois'];
-                        if ($mois == $moisASelectionner) {
+                        if ($unMois == $moisASelectionner) {
                             ?>
                             <option selected value="<?php echo $mois ?>">
                                 <?php echo $numMois . '/' . $numAnnee ?> </option>
@@ -43,18 +32,20 @@
                             <?php
                         }
                     }
-                    ?>  
-                            
+                    ?>    
 
                 </select>
-                <label for="lstVisiteur" accesskey="n">Visiteur : </label>
-                 <select id="lstMois" name="lstVisiteur" class="form-control">
+            </div>
+            
+            <div class="form-group" style="display: inline-block"> 
+                <label for="lstVisiteurs" accesskey="n">Visiteur : </label>
+                <select id="lstVisiteurs" name="lstVisiteurs" class="form-control">
                     <?php
-                    foreach ($Visiteurs as $unVisiteur) {
+                    foreach ($lesVisiteurs as $unVisiteur) {
                         $id = $unVisiteur['id'];
                         $nom = $unVisiteur['nom'];
                         $prenom = $unVisiteur['prenom'];
-                        if ($id == $VisiteursASelectionner) {
+                        if ($unVisiteur == $visiteurASelectionner) {
                             ?>
                             <option selected value="<?php echo $id ?>">
                                 <?php echo $nom . ' ' . $prenom ?> </option>
@@ -72,8 +63,8 @@
             </div>
             <input id="ok" type="submit" value="Valider" class="btn btn-success" 
                    role="button">
-     <input id="annuler" type="reset" value="Effacer" class="btn btn-danger" 
-                   role="button">
         </form>
     </div>
 </div>
+    
+        

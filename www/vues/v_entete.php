@@ -99,7 +99,7 @@
                                 </a>
                             </li>
                             <li <?php if ($uc == 'etatFrais') { ?>class="active"<?php } ?>>
-                                <a href="index.php?uc=etatFrais&action=selectionnerMois" style="background-color:orange; color:white">
+                                <a href="index.php?uc=suivrePaiement&action=choixFiche" style="background-color:orange; color:white">
                                     <span class="glyphicon glyphicon-list-alt"></span>
                                     Mettre en paiement
                                 </a>

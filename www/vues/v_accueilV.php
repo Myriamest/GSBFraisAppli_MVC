@@ -18,7 +18,7 @@
     <h2>
         Gestion des frais<small> - Visiteur : 
             <?php 
-            echo $_SESSION['prenom'] . ' ' . $_SESSION['nom']
+         echo $_SESSION['prenom'] . ' ' . $_SESSION['nom']
             ?></small>
     </h2>
 </div>

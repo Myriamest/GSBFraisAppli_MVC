@@ -47,5 +47,12 @@ case 'deconnexion':
 case'validfrais':
     include'controleurs/c_validfrais.php';
     break;
+case 'suivrePaiement':
+    include 'controleurs/c_suivrePaiement.php';
+    break;
 }
 require 'vues/v_pied.php';
+
+
+
+//inserernumtelvisiteur();
